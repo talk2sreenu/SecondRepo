@@ -19,5 +19,6 @@ jobs:
       run: | 
         cd FirstProject
         ls -a
-        mvn clean -B package --file pom.xml
+        mvn clean install -DskipTests
+        mvn -B package --file pom.xml
     
