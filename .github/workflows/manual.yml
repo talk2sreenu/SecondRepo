@@ -24,6 +24,11 @@ jobs:
         ls -a
         mvn clean install -DskipTests
         mvn -B package --file pom.xml 
+    - name: Uploading the artifacts
+      uses: actions/upload-artifact@v4
+      with:
+        name: 'Artifacts for future ref'
+        path: './FirstProject/*'
   MavenRunScript:
     runs-on: ubuntu-latest
     steps:
@@ -38,11 +43,8 @@ jobs:
         cd FirstProject
         ls -a
         mvn clean install
-  UploadingArtifacts:
-    runs-on: ubuntu-latest
-    steps:
     - name: Uploading the artifacts
       uses: actions/upload-artifact@v4
       with:
         name: 'Artifacts for future ref'
-        path: './FirstProject/*'
+        path: './FirstProject/*'    
