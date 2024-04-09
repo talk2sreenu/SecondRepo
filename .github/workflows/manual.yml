@@ -21,4 +21,8 @@ jobs:
         ls -a
         mvn clean install -DskipTests
         mvn -B package --file pom.xml
-    
+    - name: Uploading the artifacts
+      uses: actions/upload-artifacts@v4
+      with:
+        name: 'Artifacts for future ref'
+        path: './FirstProject/*' 
