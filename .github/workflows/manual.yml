@@ -15,9 +15,9 @@ jobs:
         java-version: 21
         cache: maven
     - name: Change the directory
-    - run: cd FirstProject
+      run: cd FirstProject
     - name: Listing out directory files
-    - run: ls -a
+      run: ls -a
     - name: Build with Maven
-    - run: mvn -B package --file pom.xml
+      run: mvn -B package --file pom.xml
     
