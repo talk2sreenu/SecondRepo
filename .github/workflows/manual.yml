@@ -47,4 +47,11 @@ jobs:
       uses: actions/upload-artifact@v4
       with:
         name: 'Artifacts_MavenRun'
-        path: './FirstProject/*'    
+        path: './FirstProject/*'
+  RunSeleniumGrid:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - name: Creating a selenium Grid
+      run: docker compose -f docker-compose.yml up -d
+  
