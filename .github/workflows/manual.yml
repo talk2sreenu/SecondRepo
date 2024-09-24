@@ -54,5 +54,9 @@ jobs:
     - uses: actions/checkout@v4
     - name: Creating a selenium Grid
       run: docker compose -f docker-compose.yml up -d
+    - name: Check the Running Images
+      run: docker ps -a
+    - name: Check the running image using compose
+      run: docker compose ps
     - name: Shutting down the selenium grid
       run: docker compose -f docker-compose.yml down
